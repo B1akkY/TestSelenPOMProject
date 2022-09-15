@@ -1,6 +1,6 @@
 from .pages.main_page import MainPage
 
-link = "https://selenium1py.pythonanywhere.com/"
+link = "https://selenium1py.pythonanywhere.com"
 
 
 def test_guest_can_go_to_login_page(browser):
