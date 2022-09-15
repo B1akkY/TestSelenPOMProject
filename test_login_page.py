@@ -1,6 +1,6 @@
 from .pages.login_page import LoginPage
 
-link = "https://selenium1py.pythonanywhere.com/accounts/login/"
+link = "https://selenium1py.pythonanywhere.com/accounts/login"
 
 
 def test_should_be_at_login_page(browser):
