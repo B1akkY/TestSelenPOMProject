@@ -18,4 +18,4 @@ def test_guest_should_see_login_form(browser):
 def test_guest_should_see_register_form(browser):
     page = LoginPage(browser, link)
     page.open()
-    page.should_be_register_from()
+    page.should_be_register_form()
