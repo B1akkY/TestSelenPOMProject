@@ -18,3 +18,12 @@ class ProductPageLocators:
 class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+
+
+class MainPageLocators:
+    BASKET_BTN_NAVBAR = (By.CSS_SELECTOR, ".btn-group a")
+
+
+class BasketPageLocators:
+    BASKET_IS_EMPTY_NOTIFICATION = (By.XPATH, "//p[contains(text(), 'basket is empty')]")
+    BUY_BTN = (By.CSS_SELECTOR, ".btn-block")
