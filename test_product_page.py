@@ -85,6 +85,7 @@ def test_guest_should_see_login_link_on_product_page(browser, link):
     page.should_be_login_link()
 
 
+
 @pytest.mark.parametrize("link", [
     "https://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209",
     "https://selenium1py.pythonanywhere.com/en-gb/catalogue/coders-at-work_207",
