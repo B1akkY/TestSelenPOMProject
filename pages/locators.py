@@ -16,3 +16,4 @@ class ProductPageLocators():
     BASKET_TOTAL = (By.CSS_SELECTOR, "div.alert.alert-safe.alert-noicon.alert-info.fade.in p:nth-child(1) strong")
     PRODUCT_NAME = (By.CSS_SELECTOR, "div.col-sm-6.product_main h1")
     PRODUCT_NAME_ADDED = (By.CSS_SELECTOR, "#messages div:nth-child(1) strong")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages div:nth-child(1).alert-success")
