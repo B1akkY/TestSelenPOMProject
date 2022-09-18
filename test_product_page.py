@@ -73,3 +73,21 @@ def test_message_disappeared_after_adding_product_to_basket(browser, link):
     page.open()
     page.click_add_to_basket_btn()
     page.should_be_success_message_disappeared()
+
+
+@pytest.mark.parametrize("link", ["https://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209",
+                                  "https://selenium1py.pythonanywhere.com/en-gb/catalogue/coders-at-work_207",
+                                  "https://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"])
+def test_guest_should_see_login_link_on_product_page(browser, link):
+    page = ProductPage(browser, link)
+    page.open()
+    page.should_be_login_link()
+
+
+@pytest.mark.parametrize("link", ["https://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209",
+                                  "https://selenium1py.pythonanywhere.com/en-gb/catalogue/coders-at-work_207",
+                                  "https://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"])
+def test_guest_can_go_to_login_page_from_product_page(browser, link):
+    page = ProductPage(browser, link)
+    page.open()
+    page.go_to_login_page()
