@@ -7,19 +7,10 @@ from .pages.login_page import LoginPage
 
 
 @pytest.mark.need_review
-@pytest.mark.parametrize("link", [
-    "https://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0",
-    "https://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer1",
-    "https://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer2",
-    "https://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer3",
-    "https://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer4",
-    "https://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer5",
-    "https://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer6",
-    pytest.param("https://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer7",
-                 marks=pytest.mark.xfail),
-    "https://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer8",
-    "https://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer9"])
-def test_guest_can_add_product_to_basket(browser, link):
+@pytest.mark.parametrize("promo", ["0", "1", "2", "3", "4", "5", "6",
+                                   pytest.param(7, marks=pytest.mark.xfail(reason="some bug")), "8", "9"])
+def test_guest_can_add_product_to_basket(browser, promo):
+    link = f"https://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer{promo}"
     page = ProductPage(browser, link)
     page.open()
     page.click_add_to_basket_btn()
