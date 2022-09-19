@@ -30,5 +30,5 @@ class MainPageLocators:
 
 
 class BasketPageLocators:
-    BASKET_IS_EMPTY_NOTIFICATION = (By.XPATH, "//p[contains(text(), 'basket is empty')]")
+    BASKET_IS_EMPTY_NOTIFICATION = (By.CSS_SELECTOR, "#content_inner p")
     BUY_BTN = (By.CSS_SELECTOR, ".btn-block")
